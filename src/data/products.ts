@@ -1,0 +1,546 @@
+import { Product } from '../types';
+
+export const INITIAL_PRODUCTS: Product[] = [
+  // --- RIDES & COMMUTE ---
+  {
+    id: 'uber-500',
+    name: 'Uber ₹500 Premier & Auto Pass',
+    brand: 'Uber',
+    value: 500,
+    gemPrice: 2200,
+    cashPrice: 89,
+    originalCashValue: 500,
+    category: 'Rides & Travel',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🚗',
+    tag: 'Daily Commute',
+    isPersonalized: true,
+    description: 'Save on daily cab and auto rides across India. Valid on Uber Premier, Go, Auto, and Moto.',
+    terms: [
+      'Valid for 12 months from redemption date',
+      'Can be applied directly to Uber Credits wallet',
+      'No minimum fare restriction',
+      'Valid across all 50+ cities with Uber coverage in India'
+    ],
+    inStock: true,
+    rating: 4.9,
+    redeemCount: 38400
+  },
+  {
+    id: 'ola-500',
+    name: 'Ola ₹500 Cabs & Auto Voucher',
+    brand: 'Ola',
+    value: 500,
+    gemPrice: 2000,
+    cashPrice: 79,
+    originalCashValue: 500,
+    category: 'Rides & Travel',
+    image: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🚖',
+    tag: 'City Rides',
+    isPersonalized: false,
+    description: 'Instant ride credit for city commute, airport trips, and outstation rides with Ola.',
+    terms: [
+      'Direct credit to Ola Money balance',
+      'Valid for 6 months from redemption',
+      'Applicable on Prime Sedan, Mini, Auto and Bike'
+    ],
+    inStock: true,
+    rating: 4.8,
+    redeemCount: 22100
+  },
+  {
+    id: 'rapido-250',
+    name: 'Rapido ₹250 Fast Ride Pass',
+    brand: 'Rapido',
+    value: 250,
+    gemPrice: 900,
+    cashPrice: 39,
+    originalCashValue: 250,
+    category: 'Rides & Travel',
+    image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🛵',
+    tag: 'Fast & Affordable',
+    isPersonalized: false,
+    description: 'Beat traffic jams with Rapido Bike-Taxi and Auto. Top up your wallet in seconds.',
+    terms: [
+      'Instant credit into Rapido Wallet',
+      'Valid for 90 days from generation',
+      'Can be used across unlimited rides until balance exhausts'
+    ],
+    inStock: true,
+    rating: 4.85,
+    redeemCount: 19800
+  },
+
+  // --- FOOD & DINING ---
+  {
+    id: 'zomato-500',
+    name: 'Zomato ₹500 Gourmet & Delivery',
+    brand: 'Zomato',
+    value: 500,
+    gemPrice: 2100,
+    cashPrice: 89,
+    originalCashValue: 500,
+    category: 'Food & Dining',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🍽️',
+    tag: 'Craving Special',
+    isPersonalized: true,
+    description: 'Redeem for top restaurant dining, gourmet takeout, and doorstep late-night delivery.',
+    terms: [
+      'Valid across all restaurants on Zomato Delivery & Dining',
+      'Valid for 6 months from redemption',
+      'Can be stacked with bank card discounts on Zomato'
+    ],
+    inStock: true,
+    rating: 4.95,
+    redeemCount: 64200
+  },
+  {
+    id: 'swiggy-500',
+    name: 'Swiggy ₹500 Food & Instamart',
+    brand: 'Swiggy',
+    value: 500,
+    gemPrice: 1800,
+    cashPrice: 99,
+    originalCashValue: 500,
+    category: 'Food & Dining',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🍔',
+    tag: 'Unlocked & Ready',
+    isPersonalized: true,
+    description: 'Turn your QuestRush win streak into piping hot meals and 10-minute grocery delivery.',
+    terms: [
+      'Valid on Swiggy Food, Dineout, and Instamart',
+      'Valid for 6 months from issue date',
+      'No minimum order value required'
+    ],
+    inStock: true,
+    rating: 4.9,
+    redeemCount: 78900
+  },
+  {
+    id: 'dominos-300',
+    name: "Domino's ₹300 Cheesy Feast Voucher",
+    brand: "Domino's",
+    value: 300,
+    gemPrice: 950,
+    cashPrice: 49,
+    originalCashValue: 300,
+    category: 'Food & Dining',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🍕',
+    tag: 'Quick Bite',
+    isPersonalized: false,
+    description: 'Hot cheesy crusts, stuffed garlic breadsticks, and refreshing drinks from Domino’s.',
+    terms: [
+      'Valid on Domino’s mobile app, website, and in-store dine in',
+      'Can be clubbed with existing Domino’s everyday value deals',
+      'Valid for 3 months'
+    ],
+    inStock: true,
+    rating: 4.8,
+    redeemCount: 31000
+  },
+  {
+    id: 'starbucks-500',
+    name: 'Starbucks ₹500 Coffee & Treats Card',
+    brand: 'Starbucks',
+    value: 500,
+    gemPrice: 2000,
+    cashPrice: 99,
+    originalCashValue: 500,
+    category: 'Food & Dining',
+    image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '☕',
+    tag: 'Cafe Refresh',
+    isPersonalized: false,
+    description: 'Enjoy handcrafted espresso, cold brews, Frappuccinos, and gourmet pastries.',
+    terms: [
+      'Valid at all Starbucks outlets across India',
+      'Valid for 12 months from activation',
+      'Can be loaded onto Starbucks Rewards Card'
+    ],
+    inStock: true,
+    rating: 4.75,
+    redeemCount: 14200
+  },
+
+  // --- FASHION & APPAREL ---
+  {
+    id: 'myntra-1000',
+    name: 'Myntra ₹1,000 Fashion Shopping Card',
+    brand: 'Myntra',
+    value: 1000,
+    gemPrice: 4500,
+    cashPrice: 199,
+    originalCashValue: 1000,
+    category: 'Fashion & Apparel',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🛍️',
+    tag: 'Popular Choice',
+    isPersonalized: true,
+    description: 'Use your gameplay rewards toward a ₹1,000 Myntra gift card. Valid on all fashion, footwear, and accessories.',
+    terms: [
+      'Valid for 12 months from redemption date',
+      'Can be clubbed with ongoing site discounts and sales',
+      'Instant digital voucher delivered to your in-game locker & SMS',
+      'Non-refundable once code is generated'
+    ],
+    inStock: true,
+    rating: 4.9,
+    redeemCount: 54200
+  },
+  {
+    id: 'ajio-1000',
+    name: 'Ajio ₹1,000 Trends Fashion Voucher',
+    brand: 'Ajio',
+    value: 1000,
+    gemPrice: 4200,
+    cashPrice: 189,
+    originalCashValue: 1000,
+    category: 'Fashion & Apparel',
+    image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '👗',
+    tag: 'Streetwear & Indie',
+    isPersonalized: true,
+    description: 'Explore trendy apparel, sneaker drops, ethnic wear, and international designer brands on Ajio.',
+    terms: [
+      'Valid on Ajio app and website',
+      'Can be combined with bank offers and festival coupons',
+      'Valid for 1 year from generation'
+    ],
+    inStock: true,
+    rating: 4.85,
+    redeemCount: 36700
+  },
+  {
+    id: 'hm-1000',
+    name: 'H&M ₹1,000 In-Store & Online Voucher',
+    brand: 'H&M',
+    value: 1000,
+    gemPrice: 4400,
+    cashPrice: 199,
+    originalCashValue: 1000,
+    category: 'Fashion & Apparel',
+    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🧥',
+    tag: 'Global Fashion',
+    isPersonalized: false,
+    description: 'Modern essentials, basics, winterwear, and seasonal collections at H&M stores and online.',
+    terms: [
+      'Valid at all official H&M physical stores and HM.com India',
+      'Valid for 12 months from issuance',
+      'Redeemable in full or in parts'
+    ],
+    inStock: true,
+    rating: 4.9,
+    redeemCount: 29400
+  },
+  {
+    id: 'zudio-500',
+    name: 'Zudio ₹500 Fashion Voucher',
+    brand: 'Zudio',
+    value: 500,
+    gemPrice: 1900,
+    cashPrice: 89,
+    originalCashValue: 500,
+    category: 'Fashion & Apparel',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '✨',
+    tag: 'Trendy & Affordable',
+    isPersonalized: true,
+    description: 'Trendy casualwear, footwear, beauty, and lounge fits at unbeatable prices across all Zudio outlets.',
+    terms: [
+      'Valid across all 350+ Zudio retail outlets in India',
+      'Valid for 6 months from generation',
+      'Direct barcode scan at billing counter'
+    ],
+    inStock: true,
+    rating: 4.8,
+    redeemCount: 41200
+  },
+  {
+    id: 'levis-1500',
+    name: "Levi's ₹1,500 Denim & Apparel Voucher",
+    brand: "Levi's",
+    value: 1500,
+    gemPrice: 6200,
+    cashPrice: 299,
+    originalCashValue: 1500,
+    category: 'Fashion & Apparel',
+    image: 'https://images.unsplash.com/photo-1542272604-780c96856592?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '👖',
+    tag: 'Iconic Denim',
+    isPersonalized: false,
+    description: 'Upgrade to authentic 501 jeans, denim jackets, graphic tees, and trucker jackets from Levi’s.',
+    terms: [
+      'Valid at all Levi’s exclusive brand outlets nationwide',
+      'Valid for 12 months from issue date',
+      'Can be redeemed alongside seasonal store offers'
+    ],
+    inStock: true,
+    rating: 4.9,
+    redeemCount: 18300
+  },
+  {
+    id: 'lifestyle-1000',
+    name: 'Lifestyle ₹1,000 Department Store Card',
+    brand: 'Lifestyle',
+    value: 1000,
+    gemPrice: 4000,
+    cashPrice: 189,
+    originalCashValue: 1000,
+    category: 'Fashion & Apparel',
+    image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🏬',
+    tag: 'Multi-Brand',
+    isPersonalized: false,
+    description: 'Shop top apparel, footwear, watches, fragrances, and beauty brands under one roof at Lifestyle.',
+    terms: [
+      'Valid at all Lifestyle and Home Centre stores across India',
+      'Valid for 1 year from redemption',
+      'Multiple gift cards can be clubbed in a single bill'
+    ],
+    inStock: true,
+    rating: 4.85,
+    redeemCount: 22600
+  },
+
+  // --- RETAIL & SHOPPING ---
+  {
+    id: 'shoppers-stop-1500',
+    name: 'Shoppers Stop ₹1,500 Premium Card',
+    brand: 'Shoppers Stop',
+    value: 1500,
+    gemPrice: 5900,
+    cashPrice: 279,
+    originalCashValue: 1500,
+    category: 'Retail & Shopping',
+    image: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '💎',
+    tag: 'Premium Retail',
+    isPersonalized: false,
+    description: 'Luxury perfumes, high-end fashion, makeup, and lifestyle products at Shoppers Stop stores.',
+    terms: [
+      'Valid on Shoppers Stop stores and mobile app',
+      'Valid for 12 months from activation',
+      'Instant digital code with 4-digit security PIN'
+    ],
+    inStock: true,
+    rating: 4.8,
+    redeemCount: 16700
+  },
+  {
+    id: 'reliance-trends-1000',
+    name: 'Reliance Trends ₹1,000 Shopping Voucher',
+    brand: 'Reliance',
+    value: 1000,
+    gemPrice: 3900,
+    cashPrice: 169,
+    originalCashValue: 1000,
+    category: 'Retail & Shopping',
+    image: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🏷️',
+    tag: 'Everyday Value',
+    isPersonalized: false,
+    description: 'Explore trendy collections from Netplay, Avaasa, Performax, and DNMX across all Trends stores.',
+    terms: [
+      'Valid at Trends, Trends Footwear, and Smart Bazaar',
+      'Valid for 12 months from date of issue',
+      'Redeemable at 1,500+ Reliance stores in India'
+    ],
+    inStock: true,
+    rating: 4.75,
+    redeemCount: 31400
+  },
+  {
+    id: 'amazon-500',
+    name: 'Amazon ₹500 Pay Gift Card',
+    brand: 'Amazon',
+    value: 500,
+    gemPrice: 2400,
+    cashPrice: 79,
+    originalCashValue: 500,
+    category: 'Retail & Shopping',
+    image: 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '📦',
+    tag: 'Most Flexible',
+    isPersonalized: true,
+    description: 'Add ₹500 directly to your Amazon Pay balance for shopping, bill recharges, tickets, and food.',
+    terms: [
+      'Directly adds to Amazon Pay balance',
+      'Valid for 1 year from activation',
+      'Usable across all Amazon India services and partner merchants'
+    ],
+    inStock: true,
+    rating: 4.95,
+    redeemCount: 89400
+  },
+  {
+    id: 'flipkart-1000',
+    name: 'Flipkart ₹1,000 Shopping Voucher',
+    brand: 'Flipkart',
+    value: 1000,
+    gemPrice: 4300,
+    cashPrice: 199,
+    originalCashValue: 1000,
+    category: 'Retail & Shopping',
+    image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🛒',
+    tag: 'Mega Store',
+    isPersonalized: false,
+    description: 'Shop electronics, smartphones, home essentials, and fashion on Flipkart.',
+    terms: [
+      'Can be added to Flipkart Gift Card wallet',
+      'Valid for 12 months',
+      'Can be clubbed during Big Billion Days and seasonal sales'
+    ],
+    inStock: true,
+    rating: 4.9,
+    redeemCount: 48900
+  },
+
+  // --- ELECTRONICS & TECH ---
+  {
+    id: 'reliance-digital-2000',
+    name: 'Reliance Digital ₹2,000 Tech Voucher',
+    brand: 'Reliance',
+    value: 2000,
+    gemPrice: 7800,
+    cashPrice: 349,
+    originalCashValue: 2000,
+    category: 'Electronics & Tech',
+    image: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '⚡',
+    tag: 'Gadget Upgrade',
+    isPersonalized: false,
+    description: 'Valid on headphones, mobile accessories, laptops, smartwatches, and gadgets at Reliance Digital.',
+    terms: [
+      'Valid at Reliance Digital stores & reliancedigital.in',
+      'Valid for 12 months from issue date',
+      'Full warranty and brand support provided'
+    ],
+    inStock: true,
+    rating: 4.85,
+    redeemCount: 12800
+  },
+  {
+    id: 'gaming-headset',
+    name: 'Cosmic Byte RGB 7.1 Gaming Headset',
+    brand: 'Cosmic Byte',
+    value: 1999,
+    gemPrice: 7500,
+    cashPrice: 599,
+    originalCashValue: 1999,
+    category: 'Electronics & Tech',
+    image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🎧',
+    tag: 'Gamer Gear',
+    isPersonalized: false,
+    description: '7.1 surround sound audio, noise-canceling boom mic, and glowing RGB lighting for true champions.',
+    terms: [
+      'Includes 1-Year official manufacturer warranty',
+      'Free doorstep express delivery across India',
+      'Trackable courier tracking link provided upon checkout'
+    ],
+    inStock: true,
+    rating: 4.6,
+    redeemCount: 6800
+  },
+
+  // --- GAMING & ENTERTAINMENT ---
+  {
+    id: 'pvr-400',
+    name: 'PVR INOX ₹400 Movie Experience',
+    brand: 'PVR INOX',
+    value: 400,
+    gemPrice: 1200,
+    cashPrice: 49,
+    originalCashValue: 400,
+    category: 'Gaming & Entertainment',
+    image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🎬',
+    tag: 'Weekend Special',
+    isPersonalized: false,
+    description: 'Catch the latest blockbusters on IMAX, 4DX, or regular screens at any PVR or INOX theatre.',
+    terms: [
+      'Valid across all days including weekend premier shows',
+      'Applicable for movie tickets and F&B combos',
+      'Valid for 4 months from generation'
+    ],
+    inStock: true,
+    rating: 4.8,
+    redeemCount: 21200
+  },
+  {
+    id: 'spotify-3m',
+    name: 'Spotify Premium 3-Month Membership',
+    brand: 'Spotify',
+    value: 359,
+    gemPrice: 1500,
+    cashPrice: 49,
+    originalCashValue: 359,
+    category: 'Gaming & Entertainment',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🎵',
+    tag: 'Ad-Free Music',
+    isPersonalized: false,
+    description: 'Listen ad-free with unlimited skips and offline song downloads for 3 full months.',
+    terms: [
+      'Applicable on Individual Premium accounts',
+      'Voucher code valid for 90 days from issuance',
+      'High-fidelity 320kbps audio streaming unlocked'
+    ],
+    inStock: true,
+    rating: 4.75,
+    redeemCount: 19400
+  },
+  {
+    id: 'playstation-1000',
+    name: 'PlayStation ₹1,000 Store Credit',
+    brand: 'Sony',
+    value: 1000,
+    gemPrice: 4600,
+    cashPrice: 249,
+    originalCashValue: 1000,
+    category: 'Gaming & Entertainment',
+    image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🎮',
+    tag: 'Console Gamer',
+    isPersonalized: false,
+    description: 'Buy PS5/PS4 games, Season Passes, in-game V-Bucks, FIFA Points, and DLC on PlayStation Store.',
+    terms: [
+      'Valid on India region PlayStation Network accounts',
+      'Directly adds ₹1,000 to PSN Wallet',
+      'Code never expires once added to wallet'
+    ],
+    inStock: true,
+    rating: 4.95,
+    redeemCount: 15200
+  },
+  {
+    id: 'steam-wallet-500',
+    name: 'Steam ₹500 Wallet Code',
+    brand: 'Steam',
+    value: 500,
+    gemPrice: 3200,
+    cashPrice: 149,
+    originalCashValue: 500,
+    category: 'Gaming & Entertainment',
+    image: 'https://images.unsplash.com/photo-1612287233207-6f8d070b4356?w=600&auto=format&fit=crop&q=80',
+    brandLogo: '🕹️',
+    tag: 'PC Gaming',
+    isPersonalized: false,
+    description: 'Top up your Steam account for games, in-game skins, battle passes, and DLC items during sales.',
+    terms: [
+      'Instant code delivery via in-game locker',
+      'Redeem directly on Steam desktop or mobile',
+      'No expiration date once credited'
+    ],
+    inStock: true,
+    rating: 4.9,
+    redeemCount: 16800
+  }
+];

@@ -1,0 +1,6 @@
+{
+  "name": "QuestRush - Loot Market",
+  "description": "Casual mobile game with integrated real-world commerce store connecting gameplay, gems, and rewards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
